@@ -123,10 +123,12 @@ public class ExamActivity extends AppCompatActivity  implements DataResult {
                 params1.addQueryStringParameter("key", MyURL.MYKEY);
                 params1.addQueryStringParameter("model", model);
                 params1.addQueryStringParameter("testType", MyURL.testType_order);
-                x.http().get(params1, new HttpResultResponse(this, this, 1));
-                //加载进度条
-                showDownload.setVisibility(View.VISIBLE);
-                handler.post(updateThread);
+//                x.http().get(params1, new HttpResultResponse(this, this, 1));
+//                //加载进度条
+//                showDownload.setVisibility(View.VISIBLE);
+//                handler.post(updateThread);
+                startActivity(new Intent(ExamActivity.this,UniversalActivity.class).putExtra("title","科目一"));
+
                 break;
         }
     }
@@ -160,7 +162,7 @@ public class ExamActivity extends AppCompatActivity  implements DataResult {
                 handler.removeCallbacks(updateThread);
                 showDownload.setVisibility(View.GONE);
                 Snackbar.make(showDownload,"下载成功！", Snackbar.LENGTH_SHORT).show();
-                startActivity(new Intent(ExamActivity.this,MainActivity.class));
+                startActivity(new Intent(ExamActivity.this,MainActivity.class).putExtra("title","科目一"));
             }
             handler.postDelayed(updateThread, 1000);
         }

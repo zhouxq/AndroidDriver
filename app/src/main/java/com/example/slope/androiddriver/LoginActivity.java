@@ -89,7 +89,16 @@ public class LoginActivity extends AppCompatActivity {
                     loginPassword.requestFocus();       // 控件获取焦点
                     return;                     // 结束函数的执行
                 }
-                RequestParams params=new RequestParams(MyURL.MY_SERVWE_LOGIN);
+
+                SharedPreferencesManager.setLogin(LoginActivity.this,true);
+                startActivity(new Intent(LoginActivity.this,ExamActivity.class));
+                SharedPreferences.Editor editor=getSharedPreferences("name",MODE_PRIVATE).edit();
+                editor.putString("name",loginName.getText().toString().trim());
+                editor.commit();
+                finish();
+
+
+                /*RequestParams params=new RequestParams(MyURL.MY_SERVWE_LOGIN);
                 params.addQueryStringParameter("uname",loginName.getText().toString().trim());
                 params.addQueryStringParameter("upass",loginPassword.getText().toString().trim());
                 x.http().get(params, new Callback.CommonCallback<String>() {
@@ -138,7 +147,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onFinished() {
 
                     }
-                });
+                });*/
                 break;
             case R.id.login_registered:
                 startActivity(new Intent(this,RegisteredActivity.class));

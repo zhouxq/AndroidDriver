@@ -55,7 +55,7 @@ public class AboutMeFragment extends Fragment{
         aboutmeWebview.getSettings().setBuiltInZoomControls(true);//是否支持缩放
 
         //WebView加载数据
-        aboutmeWebview.loadUrl(MyURL.ABOUT_ME);
+//        aboutmeWebview.loadUrl(MyURL.ABOUT_ME);
         // 设置WebView上所有超链接打开时使用当前Activity
         aboutmeWebview.setWebViewClient(new WebViewClient(){
             @Override

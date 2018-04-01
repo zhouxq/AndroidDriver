@@ -91,29 +91,29 @@ public class UniversalActivity extends AppCompatActivity implements SwipeBackAct
         subjectTwoFragment = new SubjectTwoFragment();
         subjectThreeFragment = new SubjectThreeFragment();
 
-
-        if (setTitle(getIntent().getStringExtra("title").equalsIgnoreCase("我的题库"))) {
+        String stringExtra = getIntent().getStringExtra("title");
+        if (setTitle("我的题库".equalsIgnoreCase(stringExtra))) {
 
             getSupportFragmentManager().beginTransaction()
 
                     .replace(R.id.framelayout, myExamFragment)
                     .show(myExamFragment)
                     .commit();
-        } else if (setTitle(getIntent().getStringExtra("title").equalsIgnoreCase("修改密码"))) {
+        } else if ("修改密码".equalsIgnoreCase(stringExtra)) {
             getSupportFragmentManager().beginTransaction()
 
                     .replace(R.id.framelayout, changePwdFragment)
 
                     .show(changePwdFragment)
                     .commit();
-        } else if (setTitle(getIntent().getStringExtra("title").equalsIgnoreCase("个人中心"))) {
+        } else if (setTitle("个人中心".equalsIgnoreCase(stringExtra))) {
             getSupportFragmentManager().beginTransaction()
 
                     .replace(R.id.framelayout, personalCenterFragment)
 
                     .show(personalCenterFragment)
                     .commit();
-        } else if (setTitle(getIntent().getStringExtra("title").equalsIgnoreCase("注册"))) {
+        } else if (setTitle("注册".equalsIgnoreCase(stringExtra))) {
             getSupportFragmentManager().beginTransaction()
 
                     .replace(R.id.framelayout, logoutFragment)
@@ -121,7 +121,7 @@ public class UniversalActivity extends AppCompatActivity implements SwipeBackAct
                     .show(logoutFragment)
                     .commit();
 
-        } else if (setTitle(getIntent().getStringExtra("title").equalsIgnoreCase("关于我"))) {
+        } else if (setTitle("关于我".equalsIgnoreCase(stringExtra))) {
             getSupportFragmentManager().beginTransaction()
 
                     .replace(R.id.framelayout, aboutMeFragment)
@@ -129,7 +129,7 @@ public class UniversalActivity extends AppCompatActivity implements SwipeBackAct
                     .show(aboutMeFragment)
                     .commit();
 
-        } else if (setTitle(getIntent().getStringExtra("title").equalsIgnoreCase("设置"))) {
+        } else if (setTitle("设置".equalsIgnoreCase(stringExtra))) {
             getSupportFragmentManager().beginTransaction()
 
                     .replace(R.id.framelayout, setUpFragment)
@@ -137,7 +137,7 @@ public class UniversalActivity extends AppCompatActivity implements SwipeBackAct
                     .show(setUpFragment)
                     .commit();
 
-        } else if (setTitle(getIntent().getStringExtra("title").equalsIgnoreCase("科目一"))) {
+        } else if (setTitle("科目一".equalsIgnoreCase(stringExtra))) {
             getSupportFragmentManager().beginTransaction()
 
                     .replace(R.id.framelayout, subjectOneFragment)
@@ -145,7 +145,7 @@ public class UniversalActivity extends AppCompatActivity implements SwipeBackAct
                     .show(subjectOneFragment)
                     .commit();
 
-        } else if (setTitle(getIntent().getStringExtra("title").equalsIgnoreCase("科目二"))) {
+        } else if (setTitle("科目二".equalsIgnoreCase(stringExtra))) {
             getSupportFragmentManager().beginTransaction()
 
                     .replace(R.id.framelayout, subjectTwoFragment)
@@ -153,7 +153,7 @@ public class UniversalActivity extends AppCompatActivity implements SwipeBackAct
                     .show(subjectTwoFragment)
                     .commit();
 
-        } else if (setTitle(getIntent().getStringExtra("title").equalsIgnoreCase("科目三"))) {
+        } else if (setTitle("科目三".equalsIgnoreCase(stringExtra))) {
             getSupportFragmentManager().beginTransaction()
 
                     .replace(R.id.framelayout, subjectThreeFragment)
@@ -161,7 +161,7 @@ public class UniversalActivity extends AppCompatActivity implements SwipeBackAct
                     .show(subjectThreeFragment)
                     .commit();
 
-        } else if (setTitle(getIntent().getStringExtra("title").equalsIgnoreCase("科目四"))) {
+        } else if (setTitle("科目四".equalsIgnoreCase(stringExtra))) {
             getSupportFragmentManager().beginTransaction()
 
                     .replace(R.id.framelayout, subjectFourFragment)
@@ -169,13 +169,13 @@ public class UniversalActivity extends AppCompatActivity implements SwipeBackAct
                     .show(subjectFourFragment)
                     .commit();
 
-        } else if (setTitle(getIntent().getStringExtra("title").equalsIgnoreCase("习题收藏"))) {
+        } else if (setTitle("习题收藏".equalsIgnoreCase(stringExtra))) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.framelayout, problemCollectFragment)
                     .show(problemCollectFragment)
                     .commit();
 
-        } else if (setTitle(getIntent().getStringExtra("title").equalsIgnoreCase("新闻收藏"))) {
+        } else if (setTitle("新闻收藏".equalsIgnoreCase(stringExtra))) {
             getSupportFragmentManager().beginTransaction()
 
                     .replace(R.id.framelayout, newsCollectFragment)
@@ -183,7 +183,7 @@ public class UniversalActivity extends AppCompatActivity implements SwipeBackAct
                     .show(newsCollectFragment)
                     .commit();
 
-        } else if (setTitle(getIntent().getStringExtra("title").equalsIgnoreCase("车友圈"))) {
+        } else if (setTitle("车友圈".equalsIgnoreCase(stringExtra))) {
             getSupportFragmentManager().beginTransaction()
 
                     .replace(R.id.framelayout, carRingFragment)

@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidDriver.iml" filepath="$PROJECT_DIR$/AndroidDriver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/AndroidDriver.iml" filepath="$PROJECT_DIR$/.idea/AndroidDriver.iml" />
+      <module fileurl="file://C:\Users\zhou\AndroidStudioProjects\AndroidDriver\AndroidDriver.iml" filepath="C:\Users\zhou\AndroidStudioProjects\AndroidDriver\AndroidDriver.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\zhou\AndroidStudioProjects\AndroidDriver\app\app.iml" filepath="C:\Users\zhou\AndroidStudioProjects\AndroidDriver\app\app.iml" />
     </modules>
   </component>
 </project>
