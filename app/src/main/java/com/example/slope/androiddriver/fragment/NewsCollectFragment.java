@@ -43,7 +43,7 @@ import butterknife.ButterKnife;
 import static com.example.slope.androiddriver.R.id.framelayout;
 
 /**
- *
+ * 搜狗输入法带来的输入体验
  * Created by Slope on 2016/9/10.
  */
 public class NewsCollectFragment extends Fragment implements INewsData {
@@ -81,7 +81,7 @@ public class NewsCollectFragment extends Fragment implements INewsData {
         else {
 
 
-        new AlertDialog.Builder(getContext())
+            new AlertDialog.Builder(getContext())
                 .setTitle("未收藏")
                 .setMessage("您还没有收藏新闻")
                 .setPositiveButton("现在去收藏", new DialogInterface.OnClickListener() {

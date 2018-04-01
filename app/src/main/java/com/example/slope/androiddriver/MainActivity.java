@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.example.slope.androiddriver.drawer.SideBar;
 import com.example.slope.androiddriver.drawer.SimpleFantasyListener;
 import com.example.slope.androiddriver.drawer.Transformer;
+import com.example.slope.androiddriver.extension.fragment.SubjectListFragment;
 import com.example.slope.androiddriver.fragment.NewsFragment;
 import com.example.slope.androiddriver.shared.SharedPreferencesManager;
 
@@ -37,7 +38,11 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.sidebar_uer_name)
     TextView sidebarUerName;
     private DrawerLayout drawerLayout;
-    private NewsFragment newsFragment;
+//    不再使用
+//    private NewsFragment newsFragment;
+
+//    科目列表
+    private SubjectListFragment subjectFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,10 +76,15 @@ public class MainActivity extends AppCompatActivity {
         sidebarUerName.setText(name);
     }
     private void initFragment() {
-            newsFragment = new NewsFragment();
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.mian_news_fram, newsFragment)
-                    .commit();
+//            newsFragment = new NewsFragment();
+//            getSupportFragmentManager().beginTransaction()
+//                    .replace(R.id.mian_news_fram, newsFragment)
+//                    .commit();
+
+        subjectFragment = new SubjectListFragment();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.mian_news_fram, subjectFragment)
+                .commit();
     }
 
     //右上角根据侧边栏的选择加载相应的选项
