@@ -62,6 +62,7 @@ public class ExaminationActivity extends AppCompatActivity implements SwipeBackA
         swipeBackActivityHelper.onActivityCreate();
         setUserName();//保存用户名到SharedPreferences
         setSelectCar();
+        setTitle("准备考试");
     }
 
     public void setUserName() {

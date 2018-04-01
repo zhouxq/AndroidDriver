@@ -66,9 +66,11 @@ public class StartExamActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start_exam);
         ButterKnife.bind(this);
         //getScore();
-        initShowTime();
+//        initShowTime();
+        showTime.setVisibility(View.INVISIBLE);
         initOneRand();
         downSchedule.setText(id + "/100");
+        setTitle("正在考试界面");
     }
 
     private void initOneRand() {

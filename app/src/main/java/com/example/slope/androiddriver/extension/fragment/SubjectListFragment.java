@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.slope.androiddriver.ExaminationActivity;
 import com.example.slope.androiddriver.NewsActivity;
 import com.example.slope.androiddriver.R;
 import com.example.slope.androiddriver.adapter.HomeRecyclerViewAdapter;
@@ -86,9 +87,15 @@ public class SubjectListFragment extends Fragment implements INewsData {
             @Override
             public void onClick(int positon) {
                 //点击进入试题练习界面
-                Intent intent=new Intent(getActivity(), NewsActivity.class);
+                /*Intent intent=new Intent(getActivity(), NewsActivity.class);
                 intent.putExtra("url",list.get(positon).getArticle_url());
+                getActivity().startActivity(intent);*/
+                String type = "Oscore";
+                Intent intent = new Intent(getActivity(), ExaminationActivity.class);
+                intent.putExtra("one", type);
                 getActivity().startActivity(intent);
+
+
             }
         });
     }

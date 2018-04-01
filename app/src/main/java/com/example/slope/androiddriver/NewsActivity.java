@@ -64,7 +64,7 @@ public class NewsActivity extends AppCompatActivity implements INewsData {
                 if (cursor.moveToNext()){
                     Toast.makeText(NewsActivity.this, "你已经收藏过该新闻了！", Toast.LENGTH_SHORT).show();
                 }
-                 else if (-1!=new ServicesDataBase(this).addOne(news)){
+                else if (-1!=new ServicesDataBase(this).addOne(news)){
 
                     Toast.makeText(this, "收藏成功", Toast.LENGTH_LONG).show();
 
