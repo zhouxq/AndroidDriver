@@ -43,6 +43,7 @@ import butterknife.ButterKnife;
 import static com.example.slope.androiddriver.R.id.framelayout;
 
 /**
+ *
  * Created by Slope on 2016/9/10.
  */
 public class NewsCollectFragment extends Fragment implements INewsData {
