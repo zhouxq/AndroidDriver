@@ -6,20 +6,16 @@
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="我的二维码"
+    android:layout_margin="@dimen/dp_6"
+    android:text="我的二维码,扫描关注我们"
     android:textColor="#000"
+    android:textAlignment="center"
     android:textSize="16sp"/>
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#000"
+        android:background="@color/color_00"
         ></View>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="扫描二维码关注"
-        android:textColor="@color/PrimaryDarkColor"
-        android:textSize="16sp"/>
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
