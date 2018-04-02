@@ -31,14 +31,8 @@ public class PersonalCenterFragment extends Fragment {
     TextView username;
     @BindView(R.id.userheader)
     RelativeLayout userheader;
-    @BindView(R.id.one_number)
-    TextView oneNumber;
     @BindView(R.id.four_number)
     TextView fourNumber;
-    @BindView(R.id.one_score)
-    TextView oneScore;
-    @BindView(R.id.four_score)
-    TextView fourScore;
     @BindView(R.id.my_err_question)
     Button myErrQuestion;
     private View rootView;
@@ -67,10 +61,7 @@ public class PersonalCenterFragment extends Fragment {
     }
 
     private void init() {
-        oneNumber.setText("您一共做错" + SharedPreferencesManager.getOneError(getContext()) + "题");
         fourNumber.setText("您一共做错" + SharedPreferencesManager.getFourError(getContext()) + "题");
-        oneScore.setText("您的成绩为：" + SharedPreferencesManager.getOneScore(getContext()) + "分");
-        fourScore.setText("您的成绩为：" + SharedPreferencesManager.getFourScore(getContext()) + "分");
     }
 
     @OnClick(R.id.my_err_question)

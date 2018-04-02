@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_6"
         android:text="科目一:"
-        android:textColor="@color/PrimaryDarkColor"
+        android:textColor="@color/primaryTextColor"
         android:textSize="24sp" />
 
     <TextView
@@ -45,27 +45,20 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_6"
         android:text="科一一共：1299题"
-        android:textColor="#000"
+        android:textColor="@color/secondaryTextColor"
         android:textSize="16sp" />
-
-    <TextView
-        android:id="@+id/one_number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textColor="@color/PrimaryColor" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="#d1d1d1"></View>
+        android:background="@color/dividerColor"></View>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_6"
         android:text="科目四:"
-        android:textColor="@color/PrimaryDarkColor"
+        android:textColor="@color/primaryTextColor"
         android:textSize="24sp" />
 
     <TextView
@@ -73,7 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_6"
         android:text="科四一共：1096题"
-        android:textColor="#000"
+        android:textColor="@color/secondaryTextColor"
         android:textSize="16sp" />
 
     <TextView
@@ -88,51 +81,6 @@
         android:layout_height="0.5dp"
         android:background="#d1d1d1"></View>
 
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dp_6"
-        android:text="科目一成绩"
-        android:textColor="@color/PrimaryDarkColor"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/one_score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:drawableLeft="@drawable/select_score"
-        android:gravity="center"
-        android:textColor="@color/PrimaryColor" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#d1d1d1"></View>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dp_6"
-        android:text="科目四成绩"
-        android:textColor="@color/PrimaryDarkColor"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/four_score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:drawableLeft="@drawable/select_score"
-        android:gravity="center"
-        android:textColor="@color/PrimaryColor" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#d1d1d1"></View>
 
     <Button
         android:layout_margin="@dimen/dp_6"
