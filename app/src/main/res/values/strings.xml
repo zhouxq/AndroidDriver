@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">易驾考</string>
+    <string name="app_name">考</string>
     <!--定义用户登陆和注册-->
     <string name="hint_name">用户名</string>
     <string name="hint_email">Email</string>
@@ -23,6 +23,6 @@
     <string name="right_news_collect">新闻收藏</string>
     <string name="right_car_ring">车友圈</string>
     <string name="exam">温馨提示：全真模拟考试下不能修改答案，每做错1题扣1分，合格标准为90分</string>
-    <string name="explanation">易驾考（测试版）1.0.0 个人地址：zjlope.cn</string>
+    <string name="explanation">考（测试版）1.0.0 </string>
     <string name="base">基于AndroidStudoid2.1</string>
 </resources>
