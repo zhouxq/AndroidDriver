@@ -4,6 +4,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -64,6 +65,10 @@ public class UniversalActivity extends AppCompatActivity implements SwipeBackAct
         swipeBackActivityHelper = new SwipeBackActivityHelper(this);
         swipeBackActivityHelper.onActivityCreate();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //action bar 去掉下面的阴影
+        if(Build.VERSION.SDK_INT >= 21){
+            getSupportActionBar().setElevation(0);
+        }
         init();
         setTitle(getIntent().getStringExtra("title"));
 
