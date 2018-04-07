@@ -96,9 +96,9 @@ public class BuyRegisterFragment extends Fragment {
         buyMonth.setText("一个月");
         buyQuarter.setText("一季度");
         buyYear.setText("一年");
-        if(start != null && "start".equals(start)){
+        if(start == null && !"start".equals(start)){
 //            从首页进来的显示取消按钮
-            buyBtnCancel.setVisibility(View.VISIBLE);
+            buyBtnCancel.setVisibility(View.GONE);
         }
         return rootView;
     }
