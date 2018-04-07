@@ -21,7 +21,10 @@
 
         <include layout="@layout/left_sidebar"></include>
 
+<!--
         <include layout="@layout/right_sidebar"></include>
+-->
+
 
     </com.example.slope.androiddriver.drawer.FantasyDrawerLayout>
 </RelativeLayout>

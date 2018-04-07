@@ -25,4 +25,18 @@
     <string name="exam">温馨提示：全真模拟考试下不能修改答案，每做错1题扣1分，合格标准为90分</string>
     <string name="explanation">考（测试版）1.0.0 </string>
     <string name="base">基于AndroidStudoid2.1</string>
+    <string name="title_activity_home2">Home2Activity</string>
+    <string name="left_register">购买激活码</string>
+    <string name="register_code">注册码</string>
+    <string name="register_pwd">注册密钥</string>
+    <string name="register_try">我要试用</string>
+    <!--left 侧边栏 add-->
+
+
+
+
+
+
+
+
 </resources>

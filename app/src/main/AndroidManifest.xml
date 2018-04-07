@@ -22,7 +22,7 @@
         <activity
             android:name=".UniversalActivity"
             android:theme="@style/UniversalTheme" />
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".LoginActivity" />
         <activity android:name=".RegisteredActivity" />
         <activity android:name=".WebActivity" />
         <activity android:name=".NewsActivity" />
@@ -52,7 +52,13 @@
         <activity
             android:name=".MyErrQuestionActivity"
             android:theme="@style/UniversalTheme" />
-        <activity android:name=".ExamActivity"></activity>
+        <activity android:name=".ExamActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".MyRegisteredCodeActivity" />
+        <activity
+            android:name=".Home2Activity"
+            android:label="@string/title_activity_home2"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

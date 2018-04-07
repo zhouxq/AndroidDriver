@@ -44,7 +44,11 @@ public class GuideActivity extends AppCompatActivity {
 
                     @Override
                     public void onClick(View v) {
-                        startActivity(new Intent(GuideActivity.this , LoginActivity.class)) ;
+                        //输入激活码部分；未激活的只有部分功能
+                        Intent intent = new Intent(GuideActivity.this,
+                                UniversalActivity.class)
+                                .putExtra("start", "start").putExtra("title", "购买激活码");
+                        startActivity(intent) ;
                         finish();
                     }
                 }) ;

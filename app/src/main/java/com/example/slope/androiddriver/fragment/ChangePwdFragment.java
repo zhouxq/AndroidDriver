@@ -9,6 +9,7 @@ import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
@@ -64,6 +65,14 @@ public class ChangePwdFragment extends Fragment {
             group.removeView(rootView);
         }
         ButterKnife.bind(this, rootView);
+        btnOk.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+//                v.setBackgroundColor(0x7f0100b1);
+                return false;
+            }
+        });
+
         return rootView;
     }
 

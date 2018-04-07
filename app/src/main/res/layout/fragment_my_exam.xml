@@ -5,16 +5,16 @@
     android:layout_height="match_parent">
 
   <LinearLayout
-      android:id="@+id/exam_title"
-      android:background="#e4e3e3"
-      android:layout_width="match_parent"
-      android:layout_height="150dp"
-      android:orientation="vertical">
-     <TextView
-         android:layout_marginTop="24dp"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:text="学车第一步，选对考题库"
+        android:id="@+id/exam_title"
+        android:background="#e4e3e3"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_marginTop="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="学车第一步，选对考题库"
          android:textSize="24sp"
          android:textColor="@color/PrimaryDarkColor"
          android:gravity="center"/>

@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.slope.androiddriver.fragment.AboutMeFragment;
+import com.example.slope.androiddriver.fragment.BuyRegisterFragment;
 import com.example.slope.androiddriver.fragment.CarRingFragment;
 import com.example.slope.androiddriver.fragment.ChangePwdFragment;
 import com.example.slope.androiddriver.fragment.LogoutFragment;
@@ -51,6 +52,9 @@ public class UniversalActivity extends AppCompatActivity implements SwipeBackAct
     private LogoutFragment logoutFragment;
     private AboutMeFragment aboutMeFragment;
     private SetUpFragment setUpFragment;
+//购买激活码
+    private BuyRegisterFragment buyRegisterFragment;
+
     public static Intent newIntent(Context context, String title) {
         Intent intent = new Intent(context, UniversalActivity.class);
         intent.putExtra("title", title);
@@ -95,6 +99,8 @@ public class UniversalActivity extends AppCompatActivity implements SwipeBackAct
         subjectOneFragment = new SubjectOneFragment();
         subjectTwoFragment = new SubjectTwoFragment();
         subjectThreeFragment = new SubjectThreeFragment();
+
+        buyRegisterFragment = new BuyRegisterFragment();
 
         String stringExtra = getIntent().getStringExtra("title");
         if (setTitle("我的题库".equalsIgnoreCase(stringExtra))) {
@@ -196,6 +202,11 @@ public class UniversalActivity extends AppCompatActivity implements SwipeBackAct
                     .show(carRingFragment)
                     .commit();
 
+        }else if (setTitle("购买激活码".equalsIgnoreCase(stringExtra))) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.framelayout, buyRegisterFragment)
+                    .show(buyRegisterFragment)
+                    .commit();
         }
 
 

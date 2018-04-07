@@ -17,6 +17,7 @@ import android.support.v7.graphics.drawable.DrawerArrowDrawable;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,14 +30,19 @@ import com.example.slope.androiddriver.shared.SharedPreferencesManager;
 
 import org.xutils.DbManager;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
+//    左侧的个人中心的
     @BindView(R.id.sidebar_uer_name)
     TextView sidebarUerName;
+
     private DrawerLayout drawerLayout;
 //    不再使用
 //    private NewsFragment newsFragment;
@@ -56,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         indicator.setColor(Color.WHITE);
         getSupportActionBar().setHomeAsUpIndicator(indicator);
 
-        setTransformer();
+//        setTransformer();
         setListener();
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         drawerLayout.setScrimColor(Color.TRANSPARENT);
@@ -87,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 .commit();
     }
 
-    //右上角根据侧边栏的选择加载相应的选项
+    //left左上角根据侧边栏的选择加载相应的选项
     private void setListener() {
         SideBar leftSideBar = (SideBar) findViewById(R.id.leftSideBar);
         leftSideBar.setFantasyListener(new SimpleFantasyListener() {
@@ -109,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
+//右侧的侧边栏 ，取消显示
     private void setTransformer() {
         final float spacing = getResources().getDimensionPixelSize(R.dimen.spacing);
         SideBar rightSideBar = (SideBar) findViewById(R.id.rightSideBar);

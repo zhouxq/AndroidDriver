@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:actionBarNavMode="standard">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:background="@color/color_00"
+            android:layout_height="200dp">
+
+        </android.support.v4.view.ViewPager>
+
+        <com.example.slope.androiddriver.widget.BottomTabView
+            android:id="@+id/bottomTabView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+        </com.example.slope.androiddriver.widget.BottomTabView>
+
+</LinearLayout>
