@@ -14,8 +14,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // 判断如果是第一次运行本项目，加载GuideActivity
-//        if(SharedUtils.isFirst(this)) {
-        if(true){
+        if(SharedUtils.isFirst(this)) {
             startActivity(new Intent(SplashActivity.this , GuideActivity.class)) ;
             finish();			// 关闭一个Activity
             return ;
@@ -26,6 +25,8 @@ public class SplashActivity extends AppCompatActivity {
                                       @Override
                                       public void run() {
                                           startActivity(new Intent(SplashActivity.this , MainActivity.class)) ;
+//                                          startActivity(new Intent(SplashActivity.this , ScanActivity.class)) ;
+
 //                                          startActivity(new Intent(SplashActivity.this , Home2Activity.class)) ;
                                           finish();			// 关闭一个Activity
                                       }

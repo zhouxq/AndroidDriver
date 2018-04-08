@@ -55,6 +55,8 @@
         <activity android:name=".ExamActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".MyRegisteredCodeActivity" />
+        <activity android:name=".ScanActivity" />
+
         <activity
             android:name=".Home2Activity"
             android:label="@string/title_activity_home2"

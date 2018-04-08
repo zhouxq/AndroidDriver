@@ -2,8 +2,6 @@ package com.example.slope.androiddriver;
 
 
 import android.animation.ObjectAnimator;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -11,13 +9,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.drawable.DrawerArrowDrawable;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,13 +21,6 @@ import com.example.slope.androiddriver.drawer.SideBar;
 import com.example.slope.androiddriver.drawer.SimpleFantasyListener;
 import com.example.slope.androiddriver.drawer.Transformer;
 import com.example.slope.androiddriver.extension.fragment.SubjectListFragment;
-import com.example.slope.androiddriver.fragment.NewsFragment;
-import com.example.slope.androiddriver.shared.SharedPreferencesManager;
-
-import org.xutils.DbManager;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -166,7 +155,10 @@ public class MainActivity extends AppCompatActivity {
         if (view instanceof TextView) {
             String title = ((TextView) view).getText().toString().trim();
             if (title.equals("注销")){
-                new AlertDialog.Builder(MainActivity.this)
+                Intent intent = new Intent(MainActivity.this, ScanActivity.class);
+                startActivity(intent);
+                finish();
+                /*new AlertDialog.Builder(MainActivity.this)
                         .setMessage("真的要注销?")
                         .setPositiveButton("是", new DialogInterface.OnClickListener() {
                             @Override
@@ -183,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
 
                             }
-                        }).show();
+                        }).show();*/
             }
             else if (title.startsWith("456")) {
                 Toast.makeText(this, title, Toast.LENGTH_SHORT).show();
