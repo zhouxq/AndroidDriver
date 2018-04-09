@@ -15,7 +15,13 @@ import android.view.Menu;
 import android.widget.Toast;
 
 import com.example.slope.androiddriver.adapter.ScanViewAdapter;
+import com.example.slope.androiddriver.database.DbHelper;
 import com.example.slope.androiddriver.drawer.ScanView;
+import com.example.slope.androiddriver.entity.Subject;
+
+import org.xutils.db.Selector;
+import org.xutils.db.table.TableEntity;
+import org.xutils.ex.DbException;
 
 /**
  * Created by zhou on 2018/4/8.
@@ -35,6 +41,16 @@ public class ScanActivity extends AppCompatActivity
         List<String> items = new ArrayList<String>();
         for (int i = 0; i < 8; i++){
             items.add("ตฺ " + (i + 1) + " าณ");
+        }
+        try {
+            Selector<Subject> subjectSelector = DbHelper.db.selector(Subject.class);
+            TableEntity<Subject> tableEntity = subjectSelector.getTable();
+            tableEntity.tableIsExist();
+            List<Subject> subjectList = DbHelper.db.findAll(Subject.class);
+
+
+        } catch (DbException e) {
+            e.printStackTrace();
         }
         adapter = new ScanViewAdapter(this, items);
         scanview.setAdapter(adapter);
