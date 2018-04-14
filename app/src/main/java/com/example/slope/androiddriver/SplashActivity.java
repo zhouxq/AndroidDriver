@@ -25,7 +25,7 @@ public class SplashActivity extends AppCompatActivity {
                                       @Override
                                       public void run() {
                                           startActivity(new Intent(SplashActivity.this , MainActivity.class)) ;
-//                                          startActivity(new Intent(SplashActivity.this , ScanActivity.class)) ;
+//                                          startActivity(new Intent(SplashActivity.this , ExamScanActivity.class)) ;
 
 //                                          startActivity(new Intent(SplashActivity.this , Home2Activity.class)) ;
                                           finish();			// 关闭一个Activity

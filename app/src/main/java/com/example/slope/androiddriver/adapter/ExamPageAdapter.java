@@ -6,7 +6,7 @@ import android.view.View;
  * Created by zhou on 2018/4/8.
  */
 
-public abstract class PageAdapter
+public abstract class ExamPageAdapter
 {
     /**
      * @return 页面view

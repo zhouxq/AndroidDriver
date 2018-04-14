@@ -105,4 +105,18 @@ public class Subject {
         this.favorites = favorites;
         return this;
     }
+
+    @Override
+    public String toString() {
+        return "Subject{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", describe='" + describe + '\'' +
+                ", type=" + type +
+                ", answer=" + answer +
+                ", image='" + image + '\'' +
+                ", optionsId=" + optionsId +
+                ", favorites=" + favorites +
+                '}';
+    }
 }

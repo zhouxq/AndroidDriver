@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <application
         android:name=".application.MyApplication"
         android:allowBackup="true"
@@ -55,7 +55,7 @@
         <activity android:name=".ExamActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".MyRegisteredCodeActivity" />
-        <activity android:name=".ScanActivity" />
+        <activity android:name=".ExamScanActivity" />
 
         <activity
             android:name=".Home2Activity"

@@ -19,8 +19,8 @@ import android.view.VelocityTracker;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import com.example.slope.androiddriver.adapter.PageAdapter;
-import com.example.slope.androiddriver.adapter.ScanViewAdapter;
+import com.example.slope.androiddriver.adapter.ExamPageAdapter;
+import com.example.slope.androiddriver.adapter.ExamViewAdapterExam;
 
 /**
  * 更多详解见博客http://blog.csdn.net/zhongkejingwang/article/details/38728119
@@ -28,7 +28,7 @@ import com.example.slope.androiddriver.adapter.ScanViewAdapter;
  * @author chenjing
  *
  */
-public class ScanView extends RelativeLayout
+public class ExamScanView extends RelativeLayout
 {
     public static final String TAG = "ScanView";
     private boolean isInit = true;
@@ -65,13 +65,13 @@ public class ScanView extends RelativeLayout
     // 滑动动画的移动速度
     public static final int MOVE_SPEED = 10;
     // 页面适配器
-    private PageAdapter adapter;
+    private ExamPageAdapter adapter;
     /**
      * 过滤多点触碰的控制变量
      */
     private int mEvents;
 
-    public void setAdapter(ScanViewAdapter adapter)
+    public void setAdapter(ExamViewAdapterExam adapter)
     {
         removeAllViews();
         this.adapter = adapter;
@@ -221,24 +221,24 @@ public class ScanView extends RelativeLayout
                 state = STATE_STOP;
                 quitMove();
             }
-            ScanView.this.requestLayout();
+            ExamScanView.this.requestLayout();
         }
 
     };
 
-    public ScanView(Context context, AttributeSet attrs, int defStyle)
+    public ExamScanView(Context context, AttributeSet attrs, int defStyle)
     {
         super(context, attrs, defStyle);
         init();
     }
 
-    public ScanView(Context context)
+    public ExamScanView(Context context)
     {
         super(context);
         init();
     }
 
-    public ScanView(Context context, AttributeSet attrs)
+    public ExamScanView(Context context, AttributeSet attrs)
     {
         super(context, attrs);
         init();

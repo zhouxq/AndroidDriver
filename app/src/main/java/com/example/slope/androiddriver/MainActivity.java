@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
         if (view instanceof TextView) {
             String title = ((TextView) view).getText().toString().trim();
             if (title.equals("注销")){
-                Intent intent = new Intent(MainActivity.this, ScanActivity.class);
+                Intent intent = new Intent(MainActivity.this, ExamScanActivity.class);
                 startActivity(intent);
                 finish();
                 /*new AlertDialog.Builder(MainActivity.this)
