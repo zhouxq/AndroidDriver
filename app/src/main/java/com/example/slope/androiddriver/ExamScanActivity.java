@@ -1,7 +1,9 @@
 package com.example.slope.androiddriver;
+import java.util.HashMap;
 import java.util.List;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import android.app.LoaderManager;
 import android.content.Context;
@@ -12,6 +14,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
@@ -34,86 +38,94 @@ public class ExamScanActivity extends AppCompatActivity
 {
     ExamScanView examScanView;
     ExamViewAdapterExam adapter;
-    private android.app.LoaderManager manager;
+    List<Subject> subjectList;
+
+    private Handler mHandler = new Handler() {
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case 1:
+                    Bundle bundle = msg.getData();
+                    ArrayList llist = bundle.getParcelableArrayList("llist");
+//                    final List<Map<String,Object>> mylist=
+//                            (List<Map<String,Object>>) llist.get(0);
+                    mHandler.removeCallbacks(mRunnable);
+                    /*List<String> items = new ArrayList<String>();
+
+                    for (int i = 0; i < 8; i++){
+                        items.add("ตฺ 卡e" + (i + 1) + " าณ");
+                    }
+                    adapter = new ExamViewAdapterExam(ExamScanActivity.this,items);
+
+                    examScanView.setAdapter(adapter);*/
+                    break;
+            }
+            super.handleMessage(msg);
+        }
+    };
+
+    private Runnable mRunnable = new Runnable() {
+        public void run() {
+            try {
+                Message msg = mHandler.obtainMessage();
+                subjectList = DbHelper.getDb().selector(Subject.class)
+                    .limit(2) //只查询两条记录
+                    .findAll();
+                for (Subject subject : subjectList) {
+                    System.out.println(subject.toString());
+                }
+                msg.what = 1 ;
+                Bundle bundle = new Bundle();
+
+
+
+                ArrayList llist = new ArrayList();//ArrayList 继承自ParcelableArrayList
+                List<Map<String,Object>> mylist = new ArrayList<>();
+                Map<String, Object> map = new HashMap<String, Object>();
+                map.put("123",new Object());
+                mylist.add(map);
+                llist.add(mylist);//mylist是List<Map<String,Object>>类型的对象
+
+                bundle.putParcelableArrayList("llist", llist);
+                mHandler.sendMessage(msg);//发送至主界面显示
+            } catch (DbException e) {
+                e.printStackTrace();
+            }            // 每3秒执行一次
+//            mHandler.postDelayed(mRunnable, 3000);  //给自己发送消息，自运行
+        }
+    };
+
+    @Override
+    protected void onDestroy() {
+        //将线程销毁掉
+        mHandler.removeCallbacks(mRunnable);
+        super.onDestroy();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan);
         examScanView = (ExamScanView) findViewById(R.id.scanview);
-        List<String> items = new ArrayList<String>();
-        for (int i = 0; i < 8; i++){
-            items.add("ตฺ 卡e" + (i + 1) + " าณ");
-        }
+
         //action bar 去掉下面的阴影
         if(Build.VERSION.SDK_INT >= 21){
             getSupportActionBar().setElevation(0);
         }
-        try {
-//            Selector<Subject> subjectSelector = DbHelper.db.selector(Subject.class);
-//            TableEntity<Subject> tableEntity = subjectSelector.getTable();
-//            tableEntity.tableIsExist();
-            /*Cursor cursor = DbHelper.getDb().execQuery("select * from subject");
+        List<String> items = new ArrayList<String>();
 
-            cursor.moveToFirst();
-            while (!cursor.isAfterLast()) {
-                Subject subject = new Subject();
-                subject.setId(cursor.getInt(cursor.getColumnIndex("id")));
-                subject.setTitle(cursor.getString(cursor.getColumnIndex("title")));
-//                Subjects.add(Subject);
-                System.out.println(cursor.getColumnIndex("title"));
-                System.out.println(subject.toString());
-                cursor.moveToNext();
-            }
-            if (!cursor.isClosed()) {
-                cursor.close();
-            }*/
-
-
-            List<Subject> subjectList = DbHelper.getDb().selector(Subject.class)
-//                    .where("name","like","%kevin%")
-//                    .and("email", "=", "caolbmail@gmail.com")
-//                    .orderBy("regTime",true)
-                    .limit(2) //只查询两条记录
-//                    .offset(2) //偏移两个,从第三个记录开始返回,limit配合offset达到sqlite的limit m,n的查询
-                    .findAll();
-            for (Subject subject : subjectList) {
-                System.out.println(subject.toString());
-            }
-
-        } catch (DbException e) {
-            e.printStackTrace();
+        for (int i = 0; i < 8; i++){
+            items.add("ตฺ 卡e" + (i + 1) + " าณ");
         }
-// 获取Loader管理器。http://www.cnblogs.com/plokmju/p/android_Loaders.html
-        manager = getLoaderManager();
-        // 初始化并启动一个Loader，设定标识为1000，并制定一个回调函数。
-        manager.initLoader(1000, null, callbacks);
-//        this.findAllSubject(this);
-        
-        adapter = new ExamViewAdapterExam(this, items);
+        adapter = new ExamViewAdapterExam(ExamScanActivity.this,items);
+
         examScanView.setAdapter(adapter);
+        // 通过Handler启动线程
+//        mHandler.post(mRunnable);  //发送消息，启动线程运行
+
+
     }
 
-    /**
-     *
-     */
-    private LoaderManager.LoaderCallbacks<Object> callbacks = new LoaderManager.LoaderCallbacks<Object>() {
-
-        @Override
-        public Loader<Object> onCreateLoader(int i, Bundle bundle) {
-            return null;
-        }
-
-        @Override
-        public void onLoadFinished(Loader<Object> loader, Object o) {
-
-        }
-
-        @Override
-        public void onLoaderReset(Loader<Object> loader) {
-
-        }
-    };
 
     /**
      *
